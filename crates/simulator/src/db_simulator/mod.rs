@@ -91,7 +91,7 @@ impl DBSimulator {
 
     pub async fn new_default_slow() -> Self {
         Self::new_slow(
-            "/home/ubuntu/sui/db/live/store",
+            "/home/ubuntu/sui/db/live/store/live/store",
             "/home/ubuntu/sui/fullnode.yaml",
             None,
             Some("/home/ubuntu/suiflow-relay/pool_related_ids.txt"),
@@ -101,7 +101,7 @@ impl DBSimulator {
 
     pub async fn new_test(fallback: bool) -> Self {
         let authority_store =
-            Self::new_authority_store("/home/ubuntu/sui/db/live/store", "/home/ubuntu/sui/fullnode.yaml").await;
+            Self::new_authority_store("/home/ubuntu/sui/db/live/store/live/store", "/home/ubuntu/sui/fullnode.yaml").await;
 
         Self::new(authority_store, None, None, fallback).await
     }
